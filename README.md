@@ -7,43 +7,44 @@ LoanOptions.ai
 # Task 2 - API - NODE.JS
 
 `Description`
-Create a ﬁle which when executed from the command line, prints the values based on
-the arguments passed.
+Create a ﬁle which when executed from the command line, prints the values based on the arguments passed.
+
 `API Endpoint:`
 https://api.publicapis.org/entries
+
 The response is a JSON object with two ﬁelds:
-● count
-● entries
+  ● count
+  ● entries
 
 Each record in ‘entries’ has following schema
-● API
-● Description
-● Auth
-● HTTPS
-● Cors
-● Link
-● Category
+  ● API
+  ● Description
+  ● Auth
+  ● HTTPS
+  ● Cors
+  ● Link
+  ● Category
 
 Instructions
-● Write code inside the ﬁle which fetches data from the API and prints the values
-of ‘API’ decreasing alphabetically
-● The ﬁle accepts two arguments ‘category’ and ‘limit’
-● Print the results matching the ‘category’ and ‘limit’ is the number of results to
-print eg: php ﬁle.php Weather 5
-● If no records matches the category, print ‘No results’
+  ● Write code inside the ﬁle which fetches data from the API and prints the values
+    of ‘API’ decreasing alphabetically
+  ● The ﬁle accepts two arguments ‘category’ and ‘limit’
+  ● Print the results matching the ‘category’ and ‘limit’ is the number of results to
+    print eg: php ﬁle.php Weather 5
+  ● If no records matches the category, print ‘No results’
+    
 Possible values of ‘category’ passed as an argument
-
-● Animals
-● Anime
-● Blockchain
-● Books
-● Business
-● Calendar
-● Weather
-● Transportation
-● Health
-● Jobs
-● Music
+  ● Animals
+  ● Anime
+  ● Blockchain
+  ● Books
+  ● Business
+  ● Calendar
+  ● Weather
+  ● Transportation
+  ● Health
+  ● Jobs
+  ● Music
 
 ## Instruction to run the app through CLI
 
