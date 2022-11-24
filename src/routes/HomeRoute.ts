@@ -1,11 +1,7 @@
-import { Router, IRouter, Response, Request } from "express";
+import { Router, IRouter } from "express";
 import expressAsyncHandler from "express-async-handler";
+import { HomeController } from "../controllers/HomeController";
 
 export const HomeRouter: IRouter = Router();
 
-HomeRouter.get(
-  "/",
-  expressAsyncHandler(async (req: Request, res: Response) => {
-    res.send("<h1>Hello World!</h1>");
-  })
-);
+HomeRouter.get("/", expressAsyncHandler(HomeController));

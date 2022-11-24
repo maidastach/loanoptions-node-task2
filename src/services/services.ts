@@ -79,6 +79,9 @@ export const renderDataByQuestions = async () => {
     Number(limit) < 1 ||
     Number(limit) >= (fullDataSet as IDataFetched).count
   ) {
+    console.log(
+      `\n NO VALID LIMIT, \n PRINTING THE REQUESTED VALUES IN DECREASING ALPHABETICALLY ORDER \n CATEGORY: ${category.toUpperCase()} \n`
+    );
     sortedDataByCategory.forEach((e) =>
       console.log("\n" + JSON.stringify(e, null, 4))
     );
@@ -86,13 +89,28 @@ export const renderDataByQuestions = async () => {
   }
   // Slicing the array by the limit and printing the values
   const slicedData = sortedDataByCategory.slice(0, parseInt(limit));
+  console.log(
+    `\n PRINTING THE SIZED REQUESTED VALUES IN DECREASING ALPHABETICALLY ORDER \n CATEGORY: ${category.toUpperCase()} - LIMIT: ${limit} \n`
+  );
   slicedData.forEach((e) => console.log("\n" + JSON.stringify(e, null, 4)));
   return;
 };
 
+/* 
+  I ASSUMED I NEEDED TO DISPLAY ALL THE DATA FROM THE API FIRST, AND THEN SHOWS ALSO THE DATA FILTERED BY CATEGORY.
+  HENCE I FETCHED ALL THE DATA AND USED "ARRAY.PROTOTYPE.FILTER()" TO SEND THE RELEVANT VALUES IN THE REQUIRED ORDER AND LIMIT
+
+  OTHERWISE I WOULD HAVE USED THE METHOD "fetchDataByCategory(category: string)" 
+    TO FETCH THE DATA BY CATEGORY
+    SORT THE VAUES
+    AND LIMIT THE RESULTS
+  WITH PRETTY THE SAME ARRAY/OBJECT METHODS SHOWED BELOW
+*/
+
 // NEED TO PASS 2 ARGUMENTS "CATEGORY" & "LIMIT" TO THE INITIAL COMMAND (es. node ./dist/index.js animals 5)
 export const renderDataByCommand = async () => {
   console.log("FETCHING DATA.... \n");
+
   // Fetching all set of data
   const fullDataSet = await fetchData();
   if (axios.isAxiosError(fullDataSet)) {
@@ -141,6 +159,9 @@ export const renderDataByCommand = async () => {
     Number(limit) < 1 ||
     Number(limit) >= (fullDataSet as IDataFetched).count
   ) {
+    console.log(
+      `\n NO VALID LIMIT, \n PRINTING THE REQUESTED VALUES IN DECREASING ALPHABETICALLY ORDER \n CATEGORY: ${category.toUpperCase()} \n`
+    );
     sortedDataByCategory.forEach((e) =>
       console.log("\n" + JSON.stringify(e, null, 4))
     );
@@ -148,6 +169,9 @@ export const renderDataByCommand = async () => {
   }
   // Slicing the array by the limit and printing the values
   const slicedData = sortedDataByCategory.slice(0, parseInt(limit));
+  console.log(
+    `\n PRINTING THE SIZED REQUESTED VALUES IN DECREASING ALPHABETICALLY ORDER \n CATEGORY: ${category.toUpperCase()} - LIMIT: ${limit} \n`
+  );
   slicedData.forEach((e) => console.log("\n" + JSON.stringify(e, null, 4)));
   return;
 };

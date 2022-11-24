@@ -9,5 +9,5 @@ export const errorHandler: ErrorRequestHandler = (
     err?.status ||
     err?.response?.status ||
     (err?.name && err?.message === "ValidationError" ? 400 : 500);
-  res.status(status).send({ message: err?.message || err.response.message });
+  res.status(status).send({ message: err?.message || err?.response?.message });
 };

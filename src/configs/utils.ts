@@ -11,12 +11,12 @@ export const sortDecreasingAlphabetically = (
 ): any[] =>
   arr.sort((a, b) => {
     if (keyToSort) {
-      if (a[keyToSort].toLowerCase() > b[keyToSort].toLowerCase()) return -1;
-      if (a[keyToSort].toLowerCase() < b[keyToSort].toLowerCase()) return 1;
+      if (a[keyToSort]?.toLowerCase() > b[keyToSort]?.toLowerCase()) return -1;
+      if (a[keyToSort]?.toLowerCase() < b[keyToSort]?.toLowerCase()) return 1;
       return 0;
     } else {
-      if (a.toLowerCase() > b.toLowerCase()) return -1;
-      if (a.toLowerCase() < b.toLowerCase()) return 1;
+      if (a?.toLowerCase() > b?.toLowerCase()) return -1;
+      if (a?.toLowerCase() < b?.toLowerCase()) return 1;
       return 0;
     }
   });

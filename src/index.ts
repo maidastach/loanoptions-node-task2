@@ -11,13 +11,14 @@ const PORT = config.PORT;
 const app: Express = express();
 
 app.use(json());
+// THE BELOW SHOULD POINT TO THE ROOT PATH ('/') HOWEVER I POINTED TO ALL THE ROUTES ('*') FOR SIMPLICITY
 app.use("*", HomeRouter);
 app.use(errorHandler);
 
 app.listen(PORT, async (): Promise<void> => {
   console.log("Server Started!");
 
-  // COULD HAVE USED IIFE TO RUN THIS OUTSIDE OF THE LISTEN CALLBACK
+  // COULD HAVE USED "IIFE" TO RUN THIS OUTSIDE OF THE LISTEN CALLBACK
   if (process.argv.length < 3) await renderDataByQuestions();
   else await renderDataByCommand();
 });
