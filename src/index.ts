@@ -11,7 +11,7 @@ const PORT = config.PORT;
 const app: Express = express();
 
 app.use(json());
-app.use("/", HomeRouter);
+app.use("*", HomeRouter);
 app.use(errorHandler);
 
 app.listen(PORT, async (): Promise<void> => {
